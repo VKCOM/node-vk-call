@@ -1,0 +1,37 @@
+{
+  "name": "vk-call",
+  "version": "1.0.0",
+  "description": "node API library for VK social network",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Termina1/node-vk-call.git"
+  },
+  "keywords": [
+    "vk",
+    "vkontakte",
+    "api",
+    "es6"
+  ],
+  "author": "Termina1",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Termina1/node-vk-call/issues"
+  },
+  "homepage": "https://github.com/Termina1/node-vk-call#readme",
+  "dependencies": {
+    "object-assign": "^4.0.1",
+    "promise-polyfill": "^3.1.0",
+    "request-promise": "^2.0.1",
+    "sinon": "^1.17.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.2.0",
+    "mocha": "^2.4.5",
+    "sinon-chai": "^2.8.0"
+  }
+}
