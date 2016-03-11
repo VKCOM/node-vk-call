@@ -237,7 +237,7 @@ describe('fn#execute', () => {
     return Promise.all([
       expect(result).to.eventually.deep.equal([USERS_GET, GROUP_ERROR]),
       expect(pr1).to.eventually.deep.equal(USERS_GET),
-      expect(pr2).to.be.eventually.rejectedWith(GROUP_ERROR)
+      expect(pr2).to.be.eventually.rejectedWith(/Domain error/)
     ]);
   });
 
