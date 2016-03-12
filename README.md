@@ -3,6 +3,12 @@
 > Simple API wrapper for VK.com social network.
 > Inspired by [node-vk-sdk](https://github.com/gavr-pavel/node-vk-sdk).
 
+# Installation
+
+```npm install vk-call```
+
+# Usage
+
 ## VK object
 
 ```javascript
