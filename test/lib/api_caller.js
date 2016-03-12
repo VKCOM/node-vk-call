@@ -195,7 +195,7 @@ describe('fn#execute', () => {
 
     chainData = [{
       method: "users.get",
-      params: { id: 1 },
+      params: { user_ids: 1 },
       resolve: res1,
       reject: rej1
     }, {
@@ -212,7 +212,7 @@ describe('fn#execute', () => {
     var spy = sinon.spy(returnOk);
 
     var result = module.execute(chainData, config, spy);
-    var code = encodeURIComponent(`return [API.users.get({"id":1}),API.groups.getById({"group_ids":1})];`);
+    var code = encodeURIComponent(`return [API.users.get({"user_ids":1}),API.groups.getById({"group_ids":1})];`);
     expect(spy).to.have.been.calledWith(({
       baseUrl: "test",
       uri: '/method/execute',

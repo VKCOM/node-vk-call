@@ -4,7 +4,8 @@
   "description": "node API library for VK social network",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive"
+    "test": "mocha --recursive",
+    "test-watch": "mocha --recursive -w"
   },
   "repository": {
     "type": "git",
