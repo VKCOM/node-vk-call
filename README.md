@@ -101,3 +101,40 @@ chain.append("users.get", { user_ids: 2 });
 // Throws error, because chain ended after done
 
 ```
+
+## Errors
+
+All errors are wrapped with VKError object wich you can request as:
+```javascript
+var VKError = require('vk-call').errors.VKError;
+```
+
+There are two type of errors:
+* domain errors — all errors, that returned by VK API
+* failures (not domain errors) — all other errors (timeouts, no internet, code issues etc.)
+
+Most of error codes that can be returned by VK API are represented by constants:
+```javascript
+var errors = require('vk-call').errors;
+assert(error.NOT_DOMAIN_ERROR === -1);
+assert(error.UKNOWN_ERROR === 1);
+assert(error.UNKNOWN_METHOD === 3);
+```
+This codes are stored in ```type``` property of ```VKError``` instance.
+
+There is also ```name``` property, it can have two values:
+```javascript
+var errors = require('vk-call').errors;
+errors.NOT_DOMAIN_NAME;
+errors.DOMAIN_NAME
+```
+This property is handy for distinguishing API errors from any other failures.
+
+Also there is an ```originalError``` property were you can get the original error (json or Error object).
+
+## Tests
+
+This library is mostly covered with tests. To run test, use ```npm test``` command.
+For developing, use ```npm test-watch``` command.
+
+We use [mocha](https://github.com/mochajs/mocha) for testing. All test files are stored in ```test/**/*```.
