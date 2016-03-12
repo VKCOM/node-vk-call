@@ -1,4 +1,4 @@
-# vk-call
+# vk-call [![Build Status](https://travis-ci.org/Termina1/node-vk-call.svg?branch=master)](https://travis-ci.org/Termina1/node-vk-call)
 
 > Simple API wrapper for VK.com social network.
 > Inspired by [node-vk-sdk](https://github.com/gavr-pavel/node-vk-sdk).
