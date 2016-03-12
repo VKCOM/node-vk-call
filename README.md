@@ -60,7 +60,7 @@ It's better to create ```Chain``` object via ```vk.chain``` method.
 ### constructor(api: vk)
 * ```api``` — initialized instance of vk
 
-### append(method, params) : Promise
+### append(method: String, params: Object) : Promise
 
 This method is very similar to ```vk.call```, but used for chaining.
 Returned promise will be resolved after successfull ```execute``` call. 
@@ -127,6 +127,7 @@ assert(errors.UKNOWN_ERROR === 1);
 assert(errors.UNKNOWN_METHOD === 3);
 ```
 This codes are stored in ```type``` property of ```VKError``` instance.
+You can find the whole list of constants [here](https://github.com/Termina1/node-vk-call/blob/master/lib/vk_error.js).
 
 There is also ```name``` property, it can have two values:
 ```javascript
