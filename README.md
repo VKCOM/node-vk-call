@@ -13,7 +13,7 @@ var vk = require('vk-call').vk;
 
 config options: 
 * ```token``` — OAuth token for authorized requests
-* ```timeout``` — request timeout
+* ```timeout``` — request timeout in milliseconds
 * ```version``` — API version
 * ```api_url``` — base url for api calls
 
@@ -35,7 +35,7 @@ var vk = require('vk-call').vk;
 var api = new vk({
   token: "YOUR TOKEN HERE",
   version: "5.50",
-  timeout: 10
+  timeout: 10000
 });
 
 api.call("users.get", { user_ids: 1 })
