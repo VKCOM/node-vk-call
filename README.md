@@ -116,16 +116,16 @@ There are two type of errors:
 Most of error codes that can be returned by VK API are represented by constants:
 ```javascript
 var errors = require('vk-call').errors;
-assert(error.NOT_DOMAIN_ERROR === -1);
-assert(error.UKNOWN_ERROR === 1);
-assert(error.UNKNOWN_METHOD === 3);
+assert(errors.NOT_DOMAIN_ERROR === -1);
+assert(errors.UKNOWN_ERROR === 1);
+assert(errors.UNKNOWN_METHOD === 3);
 ```
 This codes are stored in ```type``` property of ```VKError``` instance.
 
 There is also ```name``` property, it can have two values:
 ```javascript
 var errors = require('vk-call').errors;
-errors.NOT_DOMAIN_NAME;
+errors.NOT_DOMAIN_NAME
 errors.DOMAIN_NAME
 ```
 This property is handy for distinguishing API errors from any other failures.
