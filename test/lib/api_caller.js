@@ -7,13 +7,11 @@ var expect = chai.expect;
 
 var module = require('../../lib/api_caller');
 
-const RESPONSE = {
-  response: [{
+const RESPONSE = [{
     id: 1,
     first_name: 'Павел',
     last_name: 'Дуров'
-  }]
-}
+}];
 
 const ERROR = {
   error: {
@@ -45,7 +43,7 @@ const ERROR = {
 }
 
 function returnOk() {
-  return Promise.resolve(RESPONSE);
+  return Promise.resolve({ response: RESPONSE });
 }
 
 function returnFail() {
@@ -65,12 +63,12 @@ describe('fn#apiCall', () => {
       api_url: "test",
       timeout: 1,
       version: '5.45'
-    }, spy)).eventually.deep.equal(RESPONSE);
+    }, false, spy)).eventually.deep.equal(RESPONSE);
 
     expect(spy).to.have.been.calledWith({
       baseUrl: "test",
       uri: '/method/users.get',
-      body: "ids=1&token=0&v=5.45",
+      body: "ids=1&access_token=0&v=5.45",
       method: 'POST',
       timeout: 1
     });
@@ -83,7 +81,7 @@ describe('fn#apiCall', () => {
       token: 0,
       api_url: "test",
       timeout: 1
-    }, returnFail)).be.rejectedWith(/Failure/);
+    }, false, returnFail)).be.rejectedWith(/Failure/);
   });
 
   it("handles errors", () => {
@@ -91,7 +89,7 @@ describe('fn#apiCall', () => {
       token: 0,
       api_url: "test",
       timeout: 1
-    }, returnError)).be.rejectedWith(/Domain error/);
+    }, false, returnError)).be.rejectedWith(/Domain error/);
   });
 });
 
@@ -218,7 +216,7 @@ describe('fn#execute', () => {
     expect(spy).to.have.been.calledWith(({
       baseUrl: "test",
       uri: '/method/execute',
-      body: `code=${code}&token=0&v=5.45`,
+      body: `code=${code}&access_token=0&v=5.45`,
       method: 'POST',
       timeout: 1
     }));
