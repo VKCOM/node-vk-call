@@ -9,10 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/Termina1/node-vk-call.git"
+    "url": "git+ssh://git@github.com/VKCOM/node-vk-call.git"
   },
   "keywords": [
     "vk",
+    "vk.com",
+    "vk-api",
     "vkontakte",
     "api",
     "es6"
@@ -20,9 +22,9 @@
   "author": "Termina1",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Termina1/node-vk-call/issues"
+    "url": "https://github.com/VKCOM/node-vk-call/issues"
   },
-  "homepage": "https://github.com/Termina1/node-vk-call#readme",
+  "homepage": "https://github.com/VKCOM/node-vk-call#readme",
   "dependencies": {
     "object-assign": "^4.0.1",
     "promise-polyfill": "^3.1.0",
