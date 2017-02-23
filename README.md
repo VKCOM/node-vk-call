@@ -47,7 +47,7 @@ api.call("users.get", { user_ids: 1 })
 
 ### vk.chain() : Chain
 
-Intitializes ant returns `Chain` object
+Intitializes and returns `Chain` object
 
 ## Chain object
 
