@@ -30,10 +30,6 @@ Single api call, returns promise.
 * ```method``` — method name, i.e. 'users.get'
 * ```params``` — method parameters, i.e. ```{ id: 1 }```
 
-### vk.chain() : Chain
-
-Intitializes ant returns ``Chain``` object
-
 Example:
 ```javascript
 var vk = require('vk-call').vk;
@@ -48,6 +44,10 @@ api.call("users.get", { user_ids: 1 })
   .then(users => console.log(users));
 
 ```
+
+### vk.chain() : Chain
+
+Intitializes ant returns `Chain` object
 
 ## Chain object
 
@@ -145,3 +145,7 @@ This library is mostly covered with tests. To run test, use ```npm test``` comma
 For developing, use ```npm test-watch``` command.
 
 We use [mocha](https://github.com/mochajs/mocha) for testing. All test files are stored in ```test/**/*```.
+
+## License
+
+Distributed under [MIT LICENSE](LICENSE)
