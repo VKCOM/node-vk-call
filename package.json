@@ -1,6 +1,6 @@
 {
   "name": "vk-call",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "node API library for VK social network",
   "main": "index.js",
   "scripts": {
@@ -28,7 +28,8 @@
   "dependencies": {
     "object-assign": "^4.0.1",
     "promise-polyfill": "^3.1.0",
-    "request-promise": "^2.0.1"
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
