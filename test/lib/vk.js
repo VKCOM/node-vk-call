@@ -5,7 +5,7 @@ chai.use(require('chai-as-promised'));
 chai.use(require('sinon-chai'));
 var expect = chai.expect;
 
-var module = require('../../lib/VK');
+var module = require('../../lib/vk');
 var Chain = require('../../lib/chain').Chain;
 
 describe('VK', () => {
