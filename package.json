@@ -26,8 +26,10 @@
   },
   "homepage": "https://github.com/VKCOM/node-vk-call#readme",
   "dependencies": {
+    "debug": "^3.1.0",
     "object-assign": "^4.0.1",
     "promise-polyfill": "^3.1.0",
+    "pull-stream": "^3.6.7",
     "request": "^2.85.0",
     "request-promise": "^4.2.2"
   },
