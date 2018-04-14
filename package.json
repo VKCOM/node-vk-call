@@ -1,6 +1,6 @@
 {
   "name": "vk-call",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "node API library for VK social network",
   "main": "index.js",
   "scripts": {
