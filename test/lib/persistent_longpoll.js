@@ -41,7 +41,10 @@ describe("Persistent longpoll", () => {
       expect(data).to.eql([[80, 10]])
       return false;
     }), () => {
-      expect(rp).to.be.calledWith('test?act=a_check&key=test2&ts=10&wait=25');
+      expect(rp).to.be.calledWith({
+        timeout: ptlp.LONGPOLL_TIMEOUT,
+        url: 'test?act=a_check&key=test2&ts=10&wait=25'
+      });
       expect(api.call).to.be.calledWith('groups.getLongPollServer', {
         group_id: 1
       });
@@ -67,7 +70,10 @@ describe("Persistent longpoll", () => {
         return false;
       }
     }), () => {
-      expect(rp).to.be.calledWith('test?act=a_check&key=test2&ts=10&wait=25');
+      expect(rp).to.be.calledWith({
+        timeout: ptlp.LONGPOLL_TIMEOUT,
+        url: 'test?act=a_check&key=test2&ts=10&wait=25'
+      });
       expect(api.call).to.be.calledWith('groups.getLongPollServer', {
         group_id: 1
       });
@@ -100,8 +106,14 @@ describe("Persistent longpoll", () => {
       expect(data).to.eql([[80, 10]])
       return false;
     }), (end) => {
-      expect(rp).to.be.calledWith('test?act=a_check&key=test2&ts=10&wait=25');
-      expect(rp).to.be.calledWith('test?act=a_check&key=test2&ts=11&wait=25');
+      expect(rp).to.be.calledWith({
+        timeout: ptlp.LONGPOLL_TIMEOUT,
+        url: 'test?act=a_check&key=test2&ts=10&wait=25'
+      });
+      expect(rp).to.be.calledWith({
+        timeout: ptlp.LONGPOLL_TIMEOUT,
+        url: 'test?act=a_check&key=test2&ts=11&wait=25'
+      });
       expect(api.call).to.be.calledWith('groups.getLongPollServer', {
         group_id: 1
       });
@@ -139,8 +151,14 @@ describe("Persistent longpoll", () => {
       expect(data).to.eql([[80, 10]])
       return false;
     }), (end) => {
-      expect(rp).to.be.calledWith('test?act=a_check&key=test2&ts=10&wait=25');
-      expect(rp).to.be.calledWith('test?act=a_check&key=test3&ts=11&wait=25');
+      expect(rp).to.be.calledWith({
+        timeout: ptlp.LONGPOLL_TIMEOUT,
+        url: 'test?act=a_check&key=test2&ts=10&wait=25'
+      });
+      expect(rp).to.be.calledWith({
+        timeout: ptlp.LONGPOLL_TIMEOUT,
+        url: 'test?act=a_check&key=test3&ts=11&wait=25'
+      });
       expect(api.call).to.be.calledWith('groups.getLongPollServer', {
         group_id: 1
       });
@@ -170,7 +188,10 @@ describe("Persistent longpoll", () => {
       expect(data).to.eql([[80, 10]])
       return false;
     }), (end) => {
-      expect(rp).to.be.calledWith('test?act=a_check&key=test2&ts=10&wait=25');
+      expect(rp).to.be.calledWith({
+        timeout: ptlp.LONGPOLL_TIMEOUT,
+        url: 'test?act=a_check&key=test2&ts=10&wait=25'
+      });
       expect(api.call).to.be.calledWith('groups.getLongPollServer', {
         group_id: 1
       });
@@ -199,7 +220,10 @@ describe("Persistent longpoll", () => {
       expect(data).to.eql([[80, 10]])
       return false;
     }), (end) => {
-      expect(rp).to.be.calledWith('test?act=a_check&key=test2&ts=10&wait=25');
+      expect(rp).to.be.calledWith({
+        timeout: ptlp.LONGPOLL_TIMEOUT,
+        url: 'test?act=a_check&key=test2&ts=10&wait=25'
+      });
       expect(api.call).to.be.calledWith('groups.getLongPollServer', {
         group_id: 1
       });
