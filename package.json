@@ -30,13 +30,13 @@
     "object-assign": "^4.0.1",
     "promise-polyfill": "^3.1.0",
     "pull-stream": "^3.6.7",
-    "request": "^2.85.0",
-    "request-promise": "^4.2.2"
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^5.2.0",
-    "mocha": "^3.5.3",
+    "mocha": "^6.0.0",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0"
   },
