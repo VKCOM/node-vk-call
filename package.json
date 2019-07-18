@@ -1,6 +1,6 @@
 {
   "name": "vk-call",
-  "version": "2.1.1",
+  "version": "2.2.0",
   "description": "node API library for VK social network",
   "main": "index.js",
   "scripts": {
@@ -26,17 +26,17 @@
   },
   "homepage": "https://github.com/VKCOM/node-vk-call#readme",
   "dependencies": {
-    "debug": "^3.1.0",
+    "debug": "^3.2.6",
     "object-assign": "^4.0.1",
     "promise-polyfill": "^3.1.0",
-    "pull-stream": "^3.6.7",
+    "pull-stream": "^3.6.13",
     "request": "^2.88.0",
     "request-promise": "^4.2.4"
   },
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "^5.2.0",
-    "mocha": "^6.0.0",
+    "mocha": "^6.1.4",
     "sinon": "^1.17.3",
     "sinon-chai": "^2.8.0"
   },
