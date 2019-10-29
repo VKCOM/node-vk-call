@@ -63,7 +63,7 @@ It's better to create ```Chain``` object via ```vk.chain``` method.
 ### append(method: String, params: Object) : Promise
 
 This method is very similar to ```vk.call```, but used for chaining.
-Returned promise will be resolved after successfull ```execute``` call. 
+Returned promise will be resolved after successful ```execute``` call. 
 Promise will return value as if it is a single api call. 
 It means, that only data returned single for this request will be supplied.
 
@@ -77,7 +77,7 @@ This method will return an array of results for chained methods in the same orde
 
 Empty chain will return ```Promise([])```.
 
-Exmaple: 
+Example: 
 ```javascript
 
 var vk = require('vk-call');
@@ -110,7 +110,7 @@ chain.append("users.get", { user_ids: 2 });
 
 ## Errors
 
-All errors are wrapped with VKError object wich you can request as:
+All errors are wrapped with VKError object which you can request as:
 ```javascript
 var VKError = require('vk-call').errors.VKError;
 ```
@@ -126,7 +126,7 @@ assert(errors.NOT_DOMAIN_ERROR === -1);
 assert(errors.UKNOWN_ERROR === 1);
 assert(errors.UNKNOWN_METHOD === 3);
 ```
-This codes are stored in ```type``` property of ```VKError``` instance.
+These codes are stored in ```type``` property of ```VKError``` instance.
 You can find the whole list of constants [here](https://github.com/Termina1/node-vk-call/blob/master/lib/vk_error.js).
 
 There is also ```name``` property, it can have two values:
@@ -137,7 +137,7 @@ errors.DOMAIN_NAME
 ```
 This property is handy for distinguishing API errors from any other failures.
 
-Also there is an ```originalError``` property were you can get the original error (json or Error object).
+Also there is an ```originalError``` property where you can get the original error (json or Error object).
 
 ## Tests
 
