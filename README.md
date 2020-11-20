@@ -12,7 +12,7 @@
 ## VK object
 
 ```javascript
-var vk = require('vk-call').vk;
+const VK = require('vk-call').VK;
 ```
 
 ### constructor(config: Object)
@@ -22,6 +22,7 @@ config options:
 * ```timeout``` — request timeout in milliseconds
 * ```version``` — API version
 * ```api_url``` — base url for api calls
+* ```groupId``` — group id for Long Poll API bots
 
 ### vk.call(method: String, params: Object) : Promise
 
@@ -32,17 +33,44 @@ Single api call, returns promise.
 
 Example:
 ```javascript
-var vk = require('vk-call').vk;
-
-var api = new vk({
+const VK = require('vk-call').VK;
+const vk = new VK({
   token: "YOUR TOKEN HERE",
-  version: "5.50",
+  version: "5.124",
   timeout: 10000
 });
 
 api.call("users.get", { user_ids: 1 })
   .then(users => console.log(users));
 
+```
+
+### vk.persistentLongpoll() : { sink: EventEmitter, abort: Function }
+Start Long Poll API for group bots.
+
+Example:
+```javascript
+const VK = require('vk-call').VK;
+const vk = new VK({
+  token: "YOUR TOKEN HERE",
+  version: "5.124",
+  timeout: 10000,
+  groupId: 1,
+});
+
+const longpoll = vk.persistentLongpoll();
+longpoll.sink.on("data", (events) => {
+  events.forEach((event) => {
+    const message = event.object.message;
+    if (/^hello/i.test(msg.text)) {
+      vk.call('messages.send', {
+        user_id: message.from_id,
+        message: "Hi!",
+        random_id: 0,
+      }).catch((error) => console.error(error));
+    }
+  })
+});
 ```
 
 ### vk.chain() : Chain
@@ -80,14 +108,13 @@ Empty chain will return ```Promise([])```.
 Exmaple: 
 ```javascript
 
-var vk = require('vk-call');
-
-var api = new vk({
+const VK = require('vk-call').VK;
+const vk = new vk({
   token: "YOUR TOKEN",
-  version: "5.50"
+  version: "5.124"
 });
 
-var chain = api.chain();
+var chain = vk.chain();
 
 chain.append("users.get", { user_ids: 1 })
   .then((users) => console.log(users));
